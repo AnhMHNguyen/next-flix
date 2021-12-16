@@ -1,0 +1,146 @@
+@use "../styles/variables" as v;
+
+.container {
+  min-height: 100vh;
+  background-image: linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
+    url('/static/signin-bg.jpg');
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+
+  .headerWrapper {
+  
+    .logoWrapper {
+      width: 8rem;
+      height: 6rem;
+      
+      @media (min-width: v.$medium) {
+        width: 12rem;
+        height: 8rem;
+      }
+    }
+  }
+  
+  .main {
+    align-self: center;
+    width: 100%;
+    height: 50%;
+    max-width: 400px;
+
+    @media (min-width: v.$small) {
+      width:70%;
+    }
+    @media (min-width: v.$medium) {
+      width:50%;
+    }
+
+    @media (min-width: v.$large) {
+      width:35%;
+    }
+
+    .mainWrapper {
+      height: 100%;
+      width:100%;
+      background-color:v.$black20;
+      padding: 2.25rem;
+      
+      .title {
+        margin-bottom: 2rem; 
+
+      }
+      .inputWrapper {
+        font-family: 'Rubik', sans-serif;
+        position: relative;
+
+        .inputLabel {
+          position: absolute;
+          left: 0;
+          top: 0;
+          margin:  14px 20px;
+          white-space: nowrap;
+          transform: translate(0, 0);
+          transform-origin: 0 0;
+          color: v.$white30;
+          transition: transform 120ms ease-in;
+          line-height: 1.2;
+        }
+        .inputField {
+          box-sizing: border-box;
+          display: block;
+          width: 100%;
+          border: none;
+          padding: 15px 20px 0;
+          line-height: 2rem;
+          color: currentColor;
+          background: v.$gray10;
+          opacity: .8;
+          border-radius: 3px;
+          
+          &:focus,
+          &:not(:placeholder-shown) {
+            & {
+              outline: none;
+              background: v.$gray30;
+            }
+            & + .inputLabel {
+              transform: translate(0, -25%) scale(.6);
+            }
+          }
+        }
+      }
+      .userMsg {
+        font-family: 'Rubik', sans-serif;
+        font-size: 12px;
+        margin-top: 5px;
+        color: v.$highlight;
+      }
+
+      .signinBtn{
+        margin: 2.5rem 0 .85rem 0;
+        background-color: v.$red;
+        color: v.$white10;
+        width: 100%;
+        line-height: 2.5rem;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+// .input {
+//   position: relative;
+  
+//   &__label {
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
+//     margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * .5);
+//     background: pink;
+//     white-space: nowrap;
+//     transform: translate(0, 0);
+//     transform-origin: 0 0;
+//     background: var(--color-background);
+//     transition: transform 120ms ease-in;
+//     font-weight: bold;
+//     line-height: 1.2;
+//   }
+//   &__field {
+//     box-sizing: border-box;
+//     display: block;
+//     width: 100%;
+//     border: 3px solid currentColor;
+//     padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+//     color: currentColor;
+//     background: transparent;
+//     border-radius: var(--size-radius);
+    
+//     &:focus,
+//     &:not(:placeholder-shown) {
+//       & + .input__label {
+//         transform: translate(.25rem, -65%) scale(.8);
+//         color: var(--color-accent);
+//       }
+//     }
+//   }
+// }

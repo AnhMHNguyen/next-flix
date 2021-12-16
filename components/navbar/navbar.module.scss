@@ -1,0 +1,104 @@
+@use "../../styles/variables" as v;
+
+.container {
+  color: v.$white10;
+  position: fixed;
+  top: 0px;
+  background: linear-gradient(to bottom, v.$black 0%, transparent 100%);
+  width: 100%;
+  z-index: 50;
+  height: 45px;
+
+  @media (min-width: v.$medium) {
+    height: 50px;
+  }
+  
+  .wrapper {
+    transition: width 1s ease-in-out;
+    padding: .5rem .5rem 0rem .5rem;
+    display: flex;
+    
+    .logoWrapper {
+      width: 4rem;
+      height: 1.5rem;
+      
+      @media (min-width: v.$medium) {
+        padding: .5rem 1rem 0rem 1rem;
+        width: 6rem;
+        height: 4rem;
+      }
+    }
+    
+    .navWrapper {
+      list-style: none;
+      display: flex;
+      width: 40%;
+      gap: 2rem;
+      font-size: .75rem;
+      font-family: 'Rubik', sans-serif;
+      padding-top: .25rem;
+
+      @media (min-width: v.$medium) {
+        width: 50%;
+        gap: 2.5rem;
+        font-size: 1rem;
+      }
+
+      .navItem {
+        cursor: pointer;
+
+        &:hover {
+          color: v.$gray00;
+        }
+      }
+    }
+
+    .dropdownContainer {
+      margin-left: auto;
+
+      .btnWrapper {
+        flex-direction: column;
+        display: flex;
+        align-items: flex-end;
+
+        &:hover>.dropdownWrapper {
+          display: flex;
+        }
+        .avatarBtn{
+          float: right;
+        }
+        
+        .dropdownWrapper {
+          background-color: v.$black50;
+          border-width: 1px;
+          color: v.$white10;
+          border-color: v.$gray00;
+          opacity: .9;
+          padding: .75rem .5rem;
+          display: none;
+          flex-direction:column;
+          justify-content:center;
+          gap:.75rem;
+          width: fit-content;
+          font-family: "Rubik", sans-serif;
+          font-weight: 600;
+          font-size: .75rem;
+          margin-right: 5px;
+  
+          
+          .linkName {
+            transition-property: background-color, border-color, color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 200ms;
+            cursor: pointer;
+  
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

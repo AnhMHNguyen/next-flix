@@ -1,0 +1,113 @@
+@use "../../styles/variables" as v;
+.layout{
+  width:100%;
+  
+  .container {
+    width: 100%;
+    padding-bottom: 3rem;
+    .videoWrapper{
+      -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 80%, transparent 80%);
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      .videoPlayer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .btnWrapper {
+        display: flex;
+        margin-bottom: 0.75rem /* 12px */;
+        position: absolute;
+        top: 80%;
+        padding-left: 1rem /* 48px */;
+  
+        .iconWrapper {
+          border-color: v.$white30;
+          border-style: solid;
+          border-width: 2px;
+          background-color: v.$gray40;
+          border-radius: 9999px;
+          padding: 0.2rem;
+          display: flex;
+          align-items: center;
+          width: 1.7rem;
+          height: 1.7rem;
+  
+          &:hover {
+            border-color: v.$white10;
+          }
+  
+          @media (min-width: v.$medium) {
+            width: 2rem;
+            height: 2rem;
+            padding: 0.3rem;
+          }
+        }
+      }
+    }
+  
+    .detailWrapper {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      column-gap: 2em;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      @media (min-width: v.$medium) {
+        column-gap: 5em;
+      }
+      .col1{
+        max-height: 50vh /* 208px */;
+        overflow-y: hidden;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        .publishTime {
+          font-size: .85rem /* 18px */;
+          line-height: 1.75rem /* 28px */;
+          margin-top: 1rem /* 24px */;
+          margin-bottom: 0.5rem /* 8px */;
+          color: v.$green;
+          font-weight: 600;
+        }
+        .title {
+          font-size: .95rem /* 18px */;
+          line-height: 1.2rem /* 28px */;
+          color: v.$white10;
+          font-weight: 600;
+        }
+        .description {
+          margin-bottom: 0.5rem /* 8px */;
+          margin-top: 0.75rem /* 12px */;
+          line-height: 1.3rem;
+        }
+      }
+      .col2 {
+        color: v.$white10;
+        line-height: 1.75rem /* 28px */;
+        display: flex;
+        flex-direction: column;
+        .subTextWrapper {
+          font-size: 0.85rem /* 14px */;
+          line-height: 1.25rem /* 20px */;
+          margin-left: 0px;
+          overflow-wrap: break-word;
+          margin-top: 1.5rem /* 24px */;
+          .textColor{
+            color: v.$gray10;
+          }
+          .channelTitle {
+            color: v.$white30;
+            margin: 0px;
+          }
+        }
+      }
+    }
+  }
+}

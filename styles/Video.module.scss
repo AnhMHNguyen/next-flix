@@ -1,0 +1,24 @@
+@use './variables' as v;
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .contentWrapper {
+    margin-top:15%;
+    width: 100%;
+    // height: auto;
+    @media (min-width: v.$small) {
+      // width: 90%;
+      margin-top: 10%;
+    }
+    @media (min-width: v.$medium) {
+      width: 85%;
+    }
+    @media (min-width: v.$large) {
+      width: 60%;
+      margin-top: 5%;
+    }
+  }
+}

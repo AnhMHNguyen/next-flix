@@ -1,0 +1,12 @@
+.container {
+  .main {
+    padding-bottom: 3rem;
+    .sectionWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+  }
+}
+
+
