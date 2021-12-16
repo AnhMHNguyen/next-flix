@@ -67,7 +67,8 @@ const Signin = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Nextflix SignIn</title>
+        <title>SignIn - Nextflix</title>
+        <meta name="description" content='Signin Nextflix'></meta>
       </Head>
 
       <header>

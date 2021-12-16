@@ -132,7 +132,7 @@ const VideoDetail = ({ videoId }) => {
           </p>
           <p className={styles.subTextWrapper}>
             <span className={styles.textColor}>View Count: </span>
-            <span className={styles.channelTitle}>{video.statistics.viewCount ? video.statistics.viewCount : 0}</span>
+            <span className={styles.channelTitle}>{video.statistics.viewCount ? video.statistics.viewCount : 'N/A'}</span>
           </p>
         </div>
       </div>

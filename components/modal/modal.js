@@ -12,7 +12,7 @@ const MyModal = ({ open, url, videoId, router }) => {
         display: 'flex',
         overlay: {
           zIndex: 99,
-          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          backgroundColor: 'rgba(0, 0, 0, 0.8)'
         },
         content: {
           backgroundColor: 'rgb(20, 20, 20)',
@@ -22,7 +22,8 @@ const MyModal = ({ open, url, videoId, router }) => {
           padding: '0',
           maxWidth: '800px',
           margin: 'auto',
-        }
+          overflow: 'hidden',
+        },
       }}
     >
       <VideoDetail videoId={videoId} />

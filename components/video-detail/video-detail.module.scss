@@ -62,7 +62,7 @@
       }
       .col1{
         max-height: 50vh /* 208px */;
-        overflow-y: hidden;
+        // overflow-y: hidden;
         overflow-y: scroll;
         scrollbar-width: none;
         &::-webkit-scrollbar {
