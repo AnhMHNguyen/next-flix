@@ -13,15 +13,7 @@ Modal.setAppElement('#__next');
 
 export const getServerSideProps = async ({ req }) => {
   const { userId, token } = await redirectUser(req);
-  if (!userId) {
-    return {
-      props: {},
-      redirect: {
-        destination: "/signin",
-        permanent: false,
-      },
-    };
-  }
+  
   const watchAgainVideos = await getWatchAgainVideos(userId, token);
   const favouritedVideos = await getLikedVideos(userId, token);
   
